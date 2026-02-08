@@ -1,20 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Basic -->
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- SEO -->
   <title>OncoLB</title>
   <meta name="description" content="OncoLB – A modern oncology-focused EMR platform." />
   <meta name="author" content="Mohamad Minhem" />
 
-  <!-- Favicon -->
   <link rel="icon" href="/favicon.ico" />
 
-  <!-- Fonts (optional) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -22,7 +18,6 @@
     rel="stylesheet"
   />
 
-  <!-- Global Styles -->
   <style>
     body {
       margin: 0;
@@ -31,36 +26,46 @@
       color: #111827;
     }
 
-    #root {
+    .card {
+      max-width: 640px;
+      padding: 28px;
+      background: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+    }
+
+    .wrap {
       min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
+      padding: 24px;
     }
 
-    .loading {
-      font-size: 1rem;
-      color: #6b7280;
+    h1 {
+      margin: 0 0 12px 0;
+      font-size: 32px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    p {
+      margin: 0;
+      color: #4b5563;
+      font-size: 16px;
+      line-height: 1.6;
     }
   </style>
 </head>
 
 <body>
-  <!-- App Mount Point -->
-  <div id="root">
-    <div class="loading">Loading OncoLB…</div>
-  </div>
-
-  <!-- App Script -->
-<body>
-  <div style="min-height:100vh;display:flex;align-items:center;justify-content:center;font-family:system-ui;">
-    <div style="max-width:600px;padding:24px;">
-      <h1 style="margin:0 0 12px 0;">OncoLB</h1>
-      <p style="margin:0;color:#555;">
+  <div class="wrap">
+    <div class="card">
+      <h1>OncoLB</h1>
+      <p>
         Work in progress. If you need access, contact the admin.
       </p>
     </div>
   </div>
-</body>
 </body>
 </html>

@@ -35,8 +35,9 @@
     }
 
     .card {
-      max-width: 640px;
-      padding: 28px;
+      width: 100%;
+      max-width: 720px;
+      padding: 30px;
       background: #ffffff;
       border-radius: 16px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
@@ -73,6 +74,40 @@
       color: #6b7280;
       line-height: 1.5;
     }
+
+    .divider {
+      height: 1px;
+      background: #eef2f7;
+      margin: 16px 0;
+    }
+
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .contact {
+      font-size: 13px;
+      color: #374151;
+      line-height: 1.5;
+    }
+
+    .link {
+      color: #111827;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .footer {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
   </style>
 </head>
 
@@ -90,6 +125,22 @@
       <p class="fineprint">
         Please do not submit patient or clinical information through this website.
       </p>
+
+      <div class="divider"></div>
+
+      <div class="row">
+        <p class="contact">
+          General inquiries:
+          <a class="link" href="mailto:m.minhem1@gmail.com">m.minhem1@gmail.com</a>
+        </p>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="footer">
+        <p class="fineprint">© 2026 OncoLB</p>
+        <p class="fineprint">Beirut, Lebanon</p>
+      </div>
     </div>
   </div>
 </body>

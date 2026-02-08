@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>OncoLB</title>
-  <meta name="description" content="OncoLB – A modern oncology-focused EMR platform." />
+  <meta name="description" content="OncoLB – Oncology-focused EMR platform." />
   <meta name="author" content="Mohamad Minhem" />
 
   <link rel="icon" href="/favicon.ico" />
@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
     rel="stylesheet"
   />
 
@@ -26,6 +26,14 @@
       color: #111827;
     }
 
+    .wrap {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
     .card {
       max-width: 640px;
       padding: 28px;
@@ -34,12 +42,15 @@
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
     }
 
-    .wrap {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 24px;
+    .badge {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: #f3f4f6;
+      color: #111827;
+      margin-bottom: 14px;
     }
 
     h1 {
@@ -49,11 +60,18 @@
       letter-spacing: -0.02em;
     }
 
-    p {
-      margin: 0;
+    .subtitle {
+      margin: 0 0 14px 0;
       color: #4b5563;
       font-size: 16px;
       line-height: 1.6;
+    }
+
+    .fineprint {
+      margin: 0;
+      font-size: 12px;
+      color: #6b7280;
+      line-height: 1.5;
     }
   </style>
 </head>
@@ -70,15 +88,8 @@
       </p>
 
       <p class="fineprint">
-        Please do not send patient information through this website.
+        Please do not submit patient or clinical information through this website.
       </p>
-
-      <!-- Optional neutral contact (NOT access). Uncomment if you want it. -->
-      <!--
-      <p class="fineprint" style="margin-top:12px;">
-        General inquiries: <a class="link" href="mailto:m.minhem1@gmail.com">m.minhem1@gmail.com</a>
-      </p>
-      -->
     </div>
   </div>
 </body>

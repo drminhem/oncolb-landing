@@ -108,6 +108,12 @@
       justify-content: space-between;
       align-items: center;
     }
+
+    .footer-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
   </style>
 </head>
 
@@ -138,8 +144,11 @@
       <div class="divider"></div>
 
       <div class="footer">
-        <p class="fineprint">© 2026 OncoLB</p>
-        <p class="fineprint">Beirut, Lebanon</p>
+        <div class="footer-links">
+          <a class="fineprint link" href="/privacy-policy.html">Privacy Policy</a>
+          <a class="fineprint link" href="/data-deletion.html">Data Deletion</a>
+        </div>
+        <p class="fineprint">© 2026 OncoLB - Beirut, Lebanon</p>
       </div>
     </div>
   </div>

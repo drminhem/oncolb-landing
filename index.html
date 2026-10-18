@@ -1,156 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>OncoLB</title>
-  <meta name="description" content="OncoLB – Oncology-focused clinics platform." />
-  <meta name="author" content="Mohamad Minhem" />
-
-  <link rel="icon" href="/favicon.ico" />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-    rel="stylesheet"
-  />
-
-  <style>
-    body {
-      margin: 0;
-      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      background-color: #f7f8fa;
-      color: #111827;
-    }
-
-    .wrap {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 24px;
-    }
-
-    .card {
-      width: 100%;
-      max-width: 720px;
-      padding: 30px;
-      background: #ffffff;
-      border-radius: 16px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
-    }
-
-    .badge {
-      display: inline-block;
-      font-size: 12px;
-      font-weight: 600;
-      padding: 6px 10px;
-      border-radius: 999px;
-      background: #f3f4f6;
-      color: #111827;
-      margin-bottom: 14px;
-    }
-
-    h1 {
-      margin: 0 0 12px 0;
-      font-size: 32px;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-    }
-
-    .subtitle {
-      margin: 0 0 14px 0;
-      color: #4b5563;
-      font-size: 16px;
-      line-height: 1.6;
-    }
-
-    .fineprint {
-      margin: 0;
-      font-size: 12px;
-      color: #6b7280;
-      line-height: 1.5;
-    }
-
-    .divider {
-      height: 1px;
-      background: #eef2f7;
-      margin: 16px 0;
-    }
-
-    .row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .contact {
-      font-size: 13px;
-      color: #374151;
-      line-height: 1.5;
-    }
-
-    .link {
-      color: #111827;
-      text-decoration: underline;
-      text-underline-offset: 2px;
-    }
-
-    .footer {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>OncoLB — Patient records and clinic communication</title>
+<meta name="description" content="OncoLB is an electronic medical record and communication platform for doctors and clinics, provided by Dr. Mohamad Minhem in Beirut, Lebanon." />
+<link rel="icon" type="image/png" href="/oncolb-icon.png" />
+<style>
+:root { color-scheme:light; --ink:#173b35; --muted:#536861; --green:#1c754e; --line:#dce6df; --paper:#fafbf8; }
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { margin:0; color:var(--ink); background:var(--paper); font:17px/1.65 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+a { color:var(--green); text-underline-offset:4px; }
+a:focus-visible { outline:3px solid #935c14; outline-offset:5px; }
+.wrap { width:min(1080px,calc(100% - 48px)); margin:0 auto; }
+.skip { position:absolute; top:-80px; left:20px; z-index:10; padding:12px 18px; background:white; }
+.skip:focus { top:16px; }
+header { border-bottom:1px solid var(--line); }
+.nav { min-height:92px; display:flex; align-items:center; justify-content:space-between; gap:24px; }
+.brand { display:flex; align-items:center; gap:12px; color:var(--ink); text-decoration:none; font-size:25px; font-weight:750; letter-spacing:-.04em; }
+.brand img { width:42px; height:42px; }
+nav { display:flex; flex-wrap:wrap; gap:24px; font-size:15px; }
+nav a { color:var(--ink); }
+.hero { padding:84px 0 72px; max-width:850px; }
+.eyebrow { font-size:13px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--green); }
+h1 { font-size:clamp(38px,5.7vw,64px); line-height:1.1; letter-spacing:-.055em; font-weight:720; margin:16px 0 24px; }
+.lead { max-width:740px; font-size:21px; color:var(--muted); }
+.actions { display:flex; flex-wrap:wrap; align-items:center; gap:24px; margin-top:30px; }
+.button { display:inline-flex; align-items:center; justify-content:center; background:var(--green); color:white; font-weight:650; text-decoration:none; border-radius:10px; padding:13px 23px; }
+section { scroll-margin-top:28px; }
+h2 { font-size:clamp(27px,3.5vw,37px); line-height:1.2; letter-spacing:-.035em; margin:0 0 18px; }
+p { margin:0 0 18px; }
+.features { display:grid; grid-template-columns:repeat(3,1fr); gap:28px; padding:0 0 70px; }
+.feature { border-top:2px solid var(--line); padding-top:22px; }
+.feature h2 { font-size:20px; }
+.feature p { color:var(--muted); font-size:16px; }
+.whatsapp { padding:46px; background:#edf3ed; border:1px solid var(--line); border-radius:20px; }
+.whatsapp-intro { max-width:780px; color:var(--muted); }
+ol { margin:28px 0; padding-left:24px; }
+li { padding-left:8px; margin-bottom:16px; }
+li strong { color:var(--ink); }
+.note { border-top:1px solid #ceddce; padding-top:24px; font-size:15px; color:var(--muted); }
+.business { padding:68px 0; display:grid; grid-template-columns:1fr 1fr; gap:64px; }
+.business p { color:var(--muted); }
+.business address { font-style:normal; margin-bottom:18px; }
+footer { border-top:1px solid var(--line); padding:28px 0; color:var(--muted); font-size:14px; }
+.footer-row { display:flex; justify-content:space-between; flex-wrap:wrap; gap:18px; }
+.footer-links { display:flex; gap:24px; flex-wrap:wrap; }
+@media (max-width:700px) {
+.wrap { width:calc(100% - 36px); }
+.nav { padding:18px 0; align-items:flex-start; flex-wrap:wrap; gap:16px; }
+nav { gap:20px; }
+.hero { padding:48px 0 38px; }
+.lead { font-size:19px; }
+.features { grid-template-columns:1fr; gap:22px; padding-bottom:38px; }
+.whatsapp { padding:28px 22px; }
+.business { grid-template-columns:1fr; gap:26px; padding:40px 0; }
+}
+@media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
+</style>
 </head>
-
 <body>
-  <div class="wrap">
-    <div class="card">
-      <div class="badge">Under Development</div>
-
-      <h1>OncoLB</h1>
-
-      <p class="subtitle">
-        Oncology-focused clinics platform. This website is a placeholder while the product is being built.
-      </p>
-
-      <p class="fineprint">
-        Please do not submit patient or clinical information through this website.
-      </p>
-
-      <div class="divider"></div>
-
-      <div class="row">
-        <p class="contact">
-          General inquiries:
-          <a class="link" href="mailto:m.minhem1@gmail.com">m.minhem1@gmail.com</a>
-        </p>
-      </div>
-
-      <div class="divider"></div>
-
-      <div class="footer">
-        <div class="footer-links">
-          <a class="fineprint link" href="privacy-policy.html">Privacy Policy</a>
-          <a class="fineprint link" href="data-deletion.html">Data Deletion</a>
-        </div>
-        <p class="fineprint">© 2026 OncoLB - Beirut, Lebanon</p>
-      </div>
-    </div>
-  </div>
+<a class="skip" href="#main">Skip to content</a>
+<header><div class="wrap nav">
+<a class="brand" href="/" aria-label="OncoLB home"><img src="/oncolb-icon.png" width="42" height="42" alt="" />OncoLB</a>
+<nav aria-label="Main navigation"><a href="#whatsapp">WhatsApp for clinics</a><a href="#business">About &amp; contact</a></nav>
+</div></header>
+<main id="main" class="wrap">
+<section class="hero" aria-labelledby="intro-title">
+<div class="eyebrow">For doctors and clinics</div>
+<h1 id="intro-title">Patient records.<br />Clinic communication.<br />One place to work.</h1>
+<p class="lead">OncoLB is an electronic medical record and communication platform built around the day-to-day work of oncology practices.</p>
+<div class="actions"><a class="button" href="https://oncolb.vercel.app/">Sign in to OncoLB</a><a href="mailto:m.minhem1@gmail.com">Contact us about access</a></div>
+</section>
+<section class="features" aria-label="What OncoLB provides">
+<article class="feature"><h2>Patient records</h2><p>Keep clinical notes, reports and documents together in the patient chart.</p></article>
+<article class="feature"><h2>Appointments</h2><p>Coordinate clinic schedules, appointment confirmations and approved WhatsApp reminders.</p></article>
+<article class="feature"><h2>Team communication</h2><p>Work from clinic inboxes and give named colleagues access to the conversations they need.</p></article>
+</section>
+<section id="whatsapp" class="whatsapp" aria-labelledby="whatsapp-title">
+<div class="eyebrow">WhatsApp inside OncoLB</div>
+<h2 id="whatsapp-title">Your professional number,<br />connected to your clinic.</h2>
+<p class="whatsapp-intro">Doctors and clinics can authorize OncoLB to connect their own WhatsApp Business account. The integration brings patient communication into the clinic's workflow.</p>
+<ol>
+<li><strong>Connect through Meta.</strong> Sign in to OncoLB, open My WhatsApp and choose Connect my number. Complete Meta's authorization to select the business account and number you want to connect.</li>
+<li><strong>Read and reply.</strong> Receive messages and attachments in the connected inbox, reply during WhatsApp's permitted reply window, and send approved appointment templates when configured.</li>
+<li><strong>Choose what belongs in the chart.</strong> Review a message or document and select the patient before filing it. Connecting an inbox does not automatically file its conversations into patient charts.</li>
+<li><strong>Control team access.</strong> The inbox owner chooses which named colleagues can read and reply. The owner can disconnect the number from OncoLB.</li>
+</ol>
+<p class="note">Onboarding additional practices is subject to Meta approval and account eligibility. Keeping the same number active in the phone app requires an eligible WhatsApp Business app account and Meta's coexistence setup. WhatsApp messaging rules and applicable charges continue to apply.</p>
+</section>
+<section id="business" class="business" aria-labelledby="business-title">
+<div><h2 id="business-title">About OncoLB</h2><p>OncoLB is provided by <strong>Dr. Mohamad Minhem</strong>, based in Beirut, Lebanon. Clinics LB is the Meta application used for OncoLB's WhatsApp connection.</p><p><a href="https://drminhem.com/">About Dr. Mohamad Minhem</a></p></div>
+<div><h2>Contact &amp; privacy</h2><address><a href="mailto:m.minhem1@gmail.com">m.minhem1@gmail.com</a><br />Beirut, Lebanon</address><p>For service inquiries, account support or privacy requests, contact us by email. Please do not send patient or clinical information through this public website.</p><p><a href="/privacy-policy.html">Read our privacy policy</a> or <a href="/data-deletion.html">request data deletion</a>.</p></div>
+</section>
+</main>
+<footer><div class="wrap footer-row"><span>© 2026 OncoLB · Dr. Mohamad Minhem</span><div class="footer-links"><a href="/privacy-policy.html">Privacy policy</a><a href="/data-deletion.html">Data deletion</a></div></div></footer>
 </body>
 </html>

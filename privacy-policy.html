@@ -93,14 +93,26 @@
         <li>To operate clinic communication and patient support workflows.</li>
         <li>To connect authorized WhatsApp Business accounts, receive and reply to messages, and send approved appointment reminders.</li>
         <li>To file a message or attachment in a patient chart when an authorized clinic user explicitly chooses to do so.</li>
+        <li>To extract document text, transcribe audio, and support clinical documentation when the corresponding AI features are used.</li>
         <li>To maintain service reliability, security monitoring, and auditability.</li>
         <li>To respond to support requests and operational inquiries.</li>
       </ul>
 
       <h2>3. Sharing and Processors</h2>
       <p>
-        Data may be processed through service providers required to operate the service, including Meta WhatsApp
-        Cloud API and hosting/infrastructure providers.
+        We use service providers to operate the service. Meta provides WhatsApp messaging; Vercel hosts the
+        application; and Supabase provides the database and document storage. Our backup workflow uses GitHub
+        Actions to prepare backups and Backblaze B2 to store encrypted backup archives.
+      </p>
+      <p>
+        When email features are used, Resend processes the email content and attachments. When document
+        extraction, transcription, or other AI features are used, the selected content is processed by the
+        configured AI provider, which may be OpenAI, Anthropic, or Google. These features can involve content
+        received through WhatsApp and subsequently used in the patient chart.
+      </p>
+      <p>
+        Providers process data under their applicable service terms. Depending on the provider and service
+        configuration, processing may take place outside Lebanon.
       </p>
 
       <h2>4. Data Retention</h2>
